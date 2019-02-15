@@ -31,7 +31,7 @@ function Header(){
                 
             `}</style>
       <div id="headerDiv">
-        <Link style={{color: 'black'}} to='/'>Home</Link> | <Link style={{color: 'black'}} to='/about'>About Me</Link> | <Link style={{color: 'black'}} to='/projects'>Projects</Link>
+        <Link style={{color: 'black', fontSize: 20}} to='/'>Home</Link> | <Link style={{color: 'black', fontSize: 20}} to='/about'>About Me</Link> | <Link style={{color: 'black', fontSize: 20}} to='/projects'>Projects</Link>
       </div>
     </div>
   );

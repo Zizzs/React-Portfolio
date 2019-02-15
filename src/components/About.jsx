@@ -78,7 +78,19 @@ function About(){
                     padding-top: 10px;
                     height: 50px;
                 }
+
+                #aboutMeText {
+                    font-size: 15px;
+                    width: 80vw;
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             `}</style>
+      <div>
+          <p className="titleText">About Me:</p>
+          <p id="aboutMeText">My name is Alex Williams, and I am currently studying at Epicodus for Web Development using React, Angular, and ASP .NET. Along the way, I have picked up Python and meddled with Django 2, although I am not fully proficient in them yet. I am fully dedicated towards growing my skillset and learning new things within the Web Developmnent and Programming community. All related languages, frameworks, libraries and skills are listed below.</p>
+      </div>
       <div>
         <p className="titleText">Languages:</p>
         <div className="gridDiv">
