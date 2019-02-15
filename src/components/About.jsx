@@ -8,6 +8,8 @@ function About(){
                 .mainAboutDiv {
                     background-color: white;
                     color: black;
+                    margin-top: 120px;
+                    margin-bottom: 75px;
                 }
 
                 .gridDiv {

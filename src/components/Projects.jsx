@@ -42,6 +42,8 @@ function Projects(){
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr;
                     text-align: center;
+                    margin-top: 120px;
+                    margin-bottom: 75px;
             }
             `}</style>
       {mainProjects.map((project) =>
