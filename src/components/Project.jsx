@@ -7,7 +7,7 @@ function Project(props){
             <div className="projectDiv">
             <style jsx>{`
                 .projectDiv {
-                    border: 1px solid black;
+                    border: 3px solid black;
                     width: 200px;
                     height: auto;
                     align-self: center;
@@ -19,16 +19,7 @@ function Project(props){
                 }
 
                 .projectDiv:hover {
-                    animation-name: example;
-                    animation-duration: 4s;
-                }
-
-                @keyframes example {
-                    0%   {background-color: red;}
-                    25%  {background-color: yellow;}
-                    50%  {background-color: blue;}
-                    75%  {background-color: purple;}
-                    100% {background-color: green;}
+                    background-color: gray;
                 }
             `}</style>
                 <p>{props.name}</p>
