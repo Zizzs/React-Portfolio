@@ -6,10 +6,11 @@ function About(){
     <div className='mainAboutDiv'>
       <style jsx>{`
                 .mainAboutDiv {
-                    background-color: white;
+                    background-color: #293542;
                     color: black;
                     margin-top: 120px;
                     margin-bottom: 75px;
+                    color: white;
                 }
 
                 .gridDiv {

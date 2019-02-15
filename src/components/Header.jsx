@@ -6,17 +6,33 @@ function Header(){
     <div className='mainHeader'>
       <style jsx>{`
                 .mainHeader {
-                    background-color: white;
+                    background-color: #ABB1B9;
                     color: black;
-                    height: 100px;
+                    height: 55px;
                     left: 0;
                     top: 0;
                     position: fixed;
                     width: 100%;
                 }
+
+                #headerDiv {
+                    color: white;
+                    margin-top: 15px;
+                    margin-left: 15px;
+                }
+
+                .linkElement {
+                    color: black;
+                }
+
+                .linkElement:visited {
+                    color: black;
+                }
+                
             `}</style>
-      <h1>Alex Williams</h1>
-      <Link to='/'>Home</Link> | <Link to='/about'>About Me</Link> | <Link to='/projects'>Projects</Link>
+      <div id="headerDiv">
+        <Link style={{color: 'black'}} to='/'>Home</Link> | <Link style={{color: 'black'}} to='/about'>About Me</Link> | <Link style={{color: 'black'}} to='/projects'>Projects</Link>
+      </div>
     </div>
   );
 }

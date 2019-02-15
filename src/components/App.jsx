@@ -18,7 +18,7 @@ let styles = {
   body: {
     fontFamily: 'monospace',
     fontSize: 13,
-    backgroundColor: '#edecec',
+    backgroundColor: '#293542',
     overflow: 'auto'
   }
 }; 

@@ -44,6 +44,7 @@ function Projects(){
                     text-align: center;
                     margin-top: 120px;
                     margin-bottom: 75px;
+                    background-color: '#293542';
             }
             `}</style>
       {mainProjects.map((project) =>
