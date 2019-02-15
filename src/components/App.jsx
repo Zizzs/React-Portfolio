@@ -21,7 +21,7 @@ function componentWillUnmount() {
 
 let styles = {
     body: {
-        fontFamily: 'roboto',
+        fontFamily: 'monospace',
         fontSize: 13,
         backgroundColor: '#edecec',
         overflow: 'auto'
