@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 function Project(props){
-    return (
-        <div>
-            <div className="projectDiv">
-            <style jsx>{`
+  return (
+    <div>
+      <div className="projectDiv">
+        <style jsx>{`
                 .projectDiv {
                     border: 3px solid black;
                     width: 200px;
@@ -22,20 +22,20 @@ function Project(props){
                     background-color: gray;
                 }
             `}</style>
-                <p>{props.name}</p>
-                <p>{props.description}</p>
-                <p>{props.madeBy}</p>
-                <p><a href={props.github}>Github</a></p>
-            </div>
-        </div>
-    );
+        <p>{props.name}</p>
+        <p>{props.description}</p>
+        <p>{props.madeBy}</p>
+        <p><a href={props.github}>Github</a></p>
+      </div>
+    </div>
+  );
 }
 
 Project.propTypes = {
-    name: PropTypes.string,
-    description: PropTypes.string,
-    madeBy: PropTypes.string,
-    github: PropTypes.string
+  name: PropTypes.string,
+  description: PropTypes.string,
+  madeBy: PropTypes.string,
+  github: PropTypes.string
 };
 
 export default Project;
