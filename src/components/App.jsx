@@ -5,6 +5,7 @@ import Home from './Home';
 import Projects from './Projects';
 import About from './About';
 import Footer from './Footer';
+import Error404 from './Error404';
 
 
 
@@ -32,6 +33,7 @@ function App(){
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
         <Route exact path='/projects' component={Projects} />
+        <Route component={Error404} />
       </Switch>
       <Footer/>
     </div>
