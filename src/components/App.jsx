@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
@@ -6,6 +6,7 @@ import Projects from './Projects';
 import About from './About';
 import Footer from './Footer';
 import Error404 from './Error404';
+import ProjectDetails from './ProjectDetails';
 
 
 
@@ -26,13 +27,58 @@ let styles = {
 
 export default function App(){
   componentWillMount();
+
+  const [projects, setProjects] = useState({projects: [
+    {
+      name: 'Angular "Reddit" Clone',
+      description: 'A responsive, interactive Reddit inspired blog/forum.',
+      madeBy: 'Stuart Gill, Miranda Keith and Alex Williams',
+      github: 'https://github.com/Zizzs/Angular-Group-Forums',
+      hostLink: 'https://angular-group-forum.firebaseapp.com/',
+      id: 0
+    },
+    {
+      name: 'Angular Forum',
+      description: 'A responsive Web Development forum made using Angular.',
+      madeBy: 'Alex Williams',
+      github: 'https://github.com/Zizzs/Angular-Forums',
+      hostLink: 'https://forums-1b1e7.firebaseapp.com/',
+      id: 1
+    },
+    {
+      name: 'Job Search',
+      description: 'A group project using C#, .NET and Selenium focusing on creating a web crawler to collect job posting information.',
+      madeBy: 'Leilani Leach, Manasa Vesala, James Cho, and Alex Williams',
+      github: 'https://github.com/Zizzs/JobSearch.Solution',
+      hostLink: 'None',
+      id: 2
+    },
+    {
+      name: 'Flocking Simulator',
+      description: 'An independant project that uses p5 vectors to simular birds flocking.',
+      madeBy: 'Alex Williams',
+      github: 'https://github.com/Zizzs/Flocking_Simulator',
+      hostLink: 'None',
+      id: 3
+    },
+    {
+      name: 'Phaser Tower Defense',
+      description: 'A group project using Javascript, and the Phaser library to create a fun and interactive Tower Defense game.',
+      madeBy: 'Stuart Gill, Kenny Wolfenberger, James Cho, and Alex Williams',
+      github: 'https://github.com/Zizzs/phaser-tower-defense',
+      hostLink: 'None',
+      id: 4
+    },
+  ]});
+
   return (
     <div>
       <Header/>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/projects' component={Projects} />
+        <Route exact path='/projects' render={() => <Projects projects={projects}/>} />
+        <Route path="/projects/details/:projectId" component={ProjectDetails} />
         <Route component={Error404} />
       </Switch>
       <Footer/>

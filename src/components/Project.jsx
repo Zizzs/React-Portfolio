@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function Project(props){
+    //console.log(props);
   return (
     <div>
       <div className="projectDiv">
@@ -53,7 +55,7 @@ export default function Project(props){
                 <p>{props.description}</p>
             </div>
             <div>
-                <p><a href={props.github}>Github Link</a></p>
+                <p><Link style={{color: 'white', fontSize: 12}} to={{ pathname: `/projects/details/${props.id}`, state: {project: props.project} }}>Details</Link></p>
             </div>
         </div>
       </div>
@@ -65,5 +67,7 @@ Project.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   madeBy: PropTypes.string,
-  github: PropTypes.string
+  github: PropTypes.string,
+  project: PropTypes.object,
+  id: PropTypes.number
 };
