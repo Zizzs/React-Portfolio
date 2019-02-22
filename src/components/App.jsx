@@ -7,6 +7,7 @@ import About from './About';
 import Footer from './Footer';
 import Error404 from './Error404';
 import ProjectDetails from './ProjectDetails';
+import Admin from './Admin';
 
 function componentWillMount() {
   for(let i in styles.body){
@@ -80,26 +81,51 @@ export default function App(){
     },
   ]});
 
-  function handleAddingNewPostToList(newPost) {
-    let tempProjectAll = projects;
-    let tempProject = null;
-    for(let project of projects.projects) {
-      if(project.id === newPost.projectId) {
-        tempProject = project;
-        tempProject.posts.push(newPost);
-        tempProjectAll.projects[project.id] = tempProject;
-        setProjects(tempProjectAll); 
-      }
-    }
+  function handleNewOtherSkillCreation(skill) {
+    let tempObject = skills;
+    let tempArray = skills.other;
+    tempArray.push(skill);
+    tempObject.other = tempArray;
+    setSkills(tempObject);
   }
+
+  function handleNewLibrarySkillCreation(skill) {
+    let tempObject = skills;
+    let tempArray = skills.libraries;
+    tempArray.push(skill);
+    tempObject.libraries = tempArray;
+    setSkills(tempObject);
+  }
+
+  function handleNewLanguageSkillCreation(skill) {
+    let tempObject = skills;
+    let tempArray = skills.languages;
+    tempArray.push(skill);
+    tempObject.languages = tempArray;
+    setSkills(tempObject);
+  }
+
+  // function handleAddingNewPostToList(newPost) {
+  //   let tempProjectAll = projects;
+  //   let tempProject = null;
+  //   for(let project of projects.projects) {
+  //     if(project.id === newPost.projectId) {
+  //       tempProject = project;
+  //       tempProject.posts.push(newPost);
+  //       tempProjectAll.projects[project.id] = tempProject;
+  //       setProjects(tempProjectAll); 
+  //     }
+  //   }
+  // }
 
   return (
     <div>
       <Header/>
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/admin' render={() => <Admin onNewLanguageSkillCreation={handleNewLanguageSkillCreation} onNewLibrarySkillCreation={handleNewLibrarySkillCreation} onNewOtherSkillCreation={handleNewOtherSkillCreation} /> } />
         <Route exact path='/about' render={() => <About skills={skills}/> } />
-        <Route exact path='/projects' render={() => <Projects projects={projects} onAddingNewPostToList={handleAddingNewPostToList} />} />
+        <Route exact path='/projects' render={() => <Projects projects={projects} />} />
         <Route path='/projects/details/:projectId' component={ProjectDetails} />
         <Route component={Error404} />
       </Switch>

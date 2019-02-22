@@ -56,7 +56,7 @@ export default function Project(props){
             <p>{props.description}</p>
           </div>
           <div>
-            <p><Link style={{color: 'white', fontSize: 12}} to={{ pathname: `/projects/details/${props.id}`, state: {project: props.project, onAddingNewPostToList: props.onAddingNewPostToList, posts: props.posts}}}>Details</Link></p>
+            <p><Link style={{color: 'white', fontSize: 12}} to={{ pathname: `/projects/details/${props.id}`, state: {project: props.project, onAddingNewPostToList: props.onAddingNewPostToList}}}>Details</Link></p>
           </div>
         </div>
       </div>
