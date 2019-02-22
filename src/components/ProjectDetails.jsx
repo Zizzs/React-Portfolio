@@ -4,27 +4,19 @@ import Post from './Post';
 import { v4 } from 'uuid';
 
 export default function ProjectDetails(props){
-    const {project} = props.location.state;
-    // let newPostList = [];
-    
-    // useEffect(() => {
-    //     newPostList = [];
-    //     for (let post of props.location.state.posts) {
-    //         if(post.id === props.location.state.project.id) {
-    //             newPostList.push(post);
-    //         }
-    //     }
-    // });
-
+    console.log(props);
+  let { project } = props.location.state;
+  console.log(project);
   let _name = null;
   let _body = null;
 
-  function handleNewPostFormSubmission(event) {
-    event.preventDefault();
-    props.location.state.onAddingNewPostToList({name: _name.value, body: _body.value, projectId: project.id});
-    _name.value = '';
-    _body.value = '';
-  }
+//   function handleNewPostFormSubmission(event) {
+//     event.preventDefault();
+//     props.location.state.onAddingNewPostToList({name: _name.value, body: _body.value, projectId: project.id});
+//     _name.value = '';
+//     _body.value = '';
+//   }
+
   return (
     <div id="detailsDiv">
       <style jsx>{`
@@ -90,12 +82,12 @@ export default function ProjectDetails(props){
         </div>
       </div>
       <hr />
-      <div>
+      {/* <div>
         <div>
           <p>Comments:</p>
         </div>
         <div>
-          {project.posts.map((post) =>
+          {props.location.state.project.posts.map((post) =>
             <Post name={post.name}
               body={post.body}
               projectId={post.projectId}
@@ -115,7 +107,7 @@ export default function ProjectDetails(props){
             <button type="submit">Post!</button>
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

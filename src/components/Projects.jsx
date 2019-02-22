@@ -4,8 +4,6 @@ import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 export default function Projects(props){
-  console.log(props.projects.projects);
-  console.log(projects);
   let projects = Array.from(props.projects.projects);
   return (
     <div>

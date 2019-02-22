@@ -29,8 +29,6 @@ let styles = {
 export default function App(){
   componentWillMount();
 
-  const [posts, setPosts] = useState([]);
-
   const [projects, setProjects] = useState({projects: [
     {
       name: 'Angular "Reddit" Clone',
@@ -87,9 +85,13 @@ export default function App(){
         tempProject = project;
         tempProject.posts.push(newPost);
         tempProjectAll.projects[project.id] = tempProject;
-        setProjects({projects: tempProjectAll}); 
+        setProjects(tempProjectAll); 
       }
     }
+  }
+
+  function handleSendingId(detailsId) {
+    
   }
 
   return (
@@ -98,7 +100,7 @@ export default function App(){
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/projects' render={() => <Projects posts={posts} projects={projects} onAddingNewPostToList={handleAddingNewPostToList} />} />
+        <Route exact path='/projects' render={() => <Projects projects={projects} onAddingNewPostToList={handleAddingNewPostToList} />} />
         <Route path='/projects/details/:projectId' component={ProjectDetails} />
         <Route component={Error404} />
       </Switch>
