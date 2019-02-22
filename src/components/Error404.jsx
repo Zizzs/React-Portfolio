@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export default function Error404(props){
-  console.log(props);
   return (
     <div id="errorDiv">
       <style jsx>{`
