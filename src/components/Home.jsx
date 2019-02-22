@@ -1,5 +1,5 @@
 import React from 'react';
-import alexImage from '../assets/images/alexImage.jpg'
+import alexImage from '../assets/images/alexImage.jpg';
 
 export default function Home(){
   return (
@@ -37,17 +37,17 @@ export default function Home(){
             }
         `}</style>
       <div id="mainDivWrapper">
+        <div>
+          <img id="alexImage" src={alexImage}/>
+        </div>
+        <div id="textDiv">
           <div>
-              <img id="alexImage" src={alexImage}/>
+            <p id="descriptionText">"Professional Archaeologist Turned Web Developer"</p> 
           </div>
-          <div id="textDiv">
-            <div>
-                <p id="descriptionText">"Professional Archaeologist Turned Web Developer"</p> 
-            </div>
-            <div>
-                <p id="nameText">Alex Williams</p>
-            </div>
+          <div>
+            <p id="nameText">Alex Williams</p>
           </div>
+        </div>
       </div>
     </div>
   );

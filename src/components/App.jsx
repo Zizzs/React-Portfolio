@@ -7,14 +7,15 @@ import About from './About';
 import Footer from './Footer';
 import Error404 from './Error404';
 import ProjectDetails from './ProjectDetails';
-
-
+import { v4 } from 'uuid';
 
 function componentWillMount() {
   for(let i in styles.body){
     document.body.style[i] = styles.body[i];
   }
 }
+
+
 
 let styles = {
   body: {
@@ -27,6 +28,8 @@ let styles = {
 
 export default function App(){
   componentWillMount();
+
+  const [posts, setPosts] = useState([]);
 
   const [projects, setProjects] = useState({projects: [
     {
@@ -71,14 +74,20 @@ export default function App(){
     },
   ]});
 
+  function handleAddingNewPostToList(newPost) {
+    let postId = newPost.projectId;
+    setPosts(posts.push({id: postId, post: newPost})); 
+    console.log(posts);
+  }
+
   return (
     <div>
       <Header/>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/projects' render={() => <Projects projects={projects}/>} />
-        <Route path="/projects/details/:projectId" component={ProjectDetails} />
+        <Route exact path='/projects' render={() => <Projects posts={posts} projects={projects} onAddingNewPostToList={handleAddingNewPostToList} />} />
+        <Route path='/projects/details/:projectId' component={ProjectDetails} />
         <Route component={Error404} />
       </Switch>
       <Footer/>

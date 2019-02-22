@@ -1,7 +1,4 @@
-
-
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default function Footer(){
   return (
@@ -22,9 +19,9 @@ export default function Footer(){
                     margin-top: 15px;
                 }
             `}</style>
-        <div id="linkDiv">
+      <div id="linkDiv">
         Alex Williams | <a href='https://github.com/Zizzs'>Github Profile</a> | <a href='https://www.linkedin.com/in/alexander-edward-williams/'>LinkedIn Profile</a>
-        </div>
+      </div>
     </div>
   );
 }

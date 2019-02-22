@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+
 export default function Project(props){
-    //console.log(props);
+
   return (
     <div>
       <div className="projectDiv">
@@ -47,16 +48,16 @@ export default function Project(props){
                 }
             `}</style>
         <div>
-            <p>{props.name}</p>
-            <p>{props.madeBy}</p>
+          <p>{props.name}</p>
+          <p>{props.madeBy}</p>
         </div>
         <div id="secondGrid">
-            <div>
-                <p>{props.description}</p>
-            </div>
-            <div>
-                <p><Link style={{color: 'white', fontSize: 12}} to={{ pathname: `/projects/details/${props.id}`, state: {project: props.project} }}>Details</Link></p>
-            </div>
+          <div>
+            <p>{props.description}</p>
+          </div>
+          <div>
+            <p><Link style={{color: 'white', fontSize: 12}} to={{ pathname: `/projects/details/${props.id}`, state: {project: props.project, onAddingNewPostToList: props.onAddingNewPostToList, posts: props.posts} }}>Details</Link></p>
+          </div>
         </div>
       </div>
     </div>
@@ -69,5 +70,7 @@ Project.propTypes = {
   madeBy: PropTypes.string,
   github: PropTypes.string,
   project: PropTypes.object,
-  id: PropTypes.number
+  id: PropTypes.number,
+  onAddingNewPostToList: PropTypes.func,
+  posts: PropTypes.array
 };
