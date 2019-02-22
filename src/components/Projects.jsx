@@ -4,7 +4,9 @@ import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 export default function Projects(props){
-
+  console.log(props.projects.projects);
+  console.log(projects);
+  let projects = Array.from(props.projects.projects);
   return (
     <div>
       <style jsx>{`
@@ -27,14 +29,13 @@ export default function Projects(props){
         <p id="projectsText">Major Projects:</p>
       </div>
       <div className='projectsDiv'>
-        {props.projects.projects.map((project) =>
+        {projects.map((project) =>
           <Project name={project.name}
             description={project.description}
             madeBy={project.madeBy}
             github={project.github}
             project={project}
             id={project.id}
-            posts={props.posts}
             onAddingNewPostToList={props.onAddingNewPostToList}
             key={v4()} />
         )}
@@ -46,5 +47,4 @@ export default function Projects(props){
 Projects.propTypes = {
   projects: PropTypes.object,
   onAddingNewPostToList: PropTypes.func,
-  posts: PropTypes.array
 };

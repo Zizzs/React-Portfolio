@@ -72,5 +72,4 @@ Project.propTypes = {
   project: PropTypes.object,
   id: PropTypes.number,
   onAddingNewPostToList: PropTypes.func,
-  posts: PropTypes.array
 };

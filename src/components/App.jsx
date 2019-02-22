@@ -38,6 +38,7 @@ export default function App(){
       madeBy: 'Stuart Gill, Miranda Keith and Alex Williams',
       github: 'https://github.com/Zizzs/Angular-Group-Forums',
       hostLink: 'https://angular-group-forum.firebaseapp.com/',
+      posts: [],
       id: 0
     },
     {
@@ -46,6 +47,7 @@ export default function App(){
       madeBy: 'Alex Williams',
       github: 'https://github.com/Zizzs/Angular-Forums',
       hostLink: 'https://forums-1b1e7.firebaseapp.com/',
+      posts: [],
       id: 1
     },
     {
@@ -54,6 +56,7 @@ export default function App(){
       madeBy: 'Leilani Leach, Manasa Vesala, James Cho, and Alex Williams',
       github: 'https://github.com/Zizzs/JobSearch.Solution',
       hostLink: 'None',
+      posts: [],
       id: 2
     },
     {
@@ -62,6 +65,7 @@ export default function App(){
       madeBy: 'Alex Williams',
       github: 'https://github.com/Zizzs/Flocking_Simulator',
       hostLink: 'None',
+      posts: [],
       id: 3
     },
     {
@@ -70,14 +74,22 @@ export default function App(){
       madeBy: 'Stuart Gill, Kenny Wolfenberger, James Cho, and Alex Williams',
       github: 'https://github.com/Zizzs/phaser-tower-defense',
       hostLink: 'None',
+      posts: [],
       id: 4
     },
   ]});
 
   function handleAddingNewPostToList(newPost) {
-    let postId = newPost.projectId;
-    setPosts(posts.push({id: postId, post: newPost})); 
-    console.log(posts);
+    let tempProjectAll = projects;
+    let tempProject = null;
+    for(let project of projects.projects) {
+      if(project.id === newPost.projectId) {
+        tempProject = project;
+        tempProject.posts.push(newPost);
+        tempProjectAll.projects[project.id] = tempProject;
+        setProjects({projects: tempProjectAll}); 
+      }
+    }
   }
 
   return (

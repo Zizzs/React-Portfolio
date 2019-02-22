@@ -1,22 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Post from './Post';
 import { v4 } from 'uuid';
 
 export default function ProjectDetails(props){
     const {project} = props.location.state;
-    let projectPosts = [];
-
-    console.log(props);
-    console.log(projectPosts);
-
-    useEffect(() => {
-        for (let post of props.location.state.posts) {
-            if(post.id === props.location.state.project.id) {
-                projectPosts.push(post);
-            }
-        }
-    });
+    // let newPostList = [];
+    
+    // useEffect(() => {
+    //     newPostList = [];
+    //     for (let post of props.location.state.posts) {
+    //         if(post.id === props.location.state.project.id) {
+    //             newPostList.push(post);
+    //         }
+    //     }
+    // });
 
   let _name = null;
   let _body = null;
@@ -97,10 +95,10 @@ export default function ProjectDetails(props){
           <p>Comments:</p>
         </div>
         <div>
-          {props.location.state.posts.map((post) =>
-            <Post name={post.post.name}
-              body={post.post.body}
-              projectId={project.id}
+          {project.posts.map((post) =>
+            <Post name={post.name}
+              body={post.body}
+              projectId={post.projectId}
               key={v4()}/>
           )}
         </div>
