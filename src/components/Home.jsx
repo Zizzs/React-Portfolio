@@ -1,6 +1,7 @@
 import React from 'react';
 import alexImage from '../assets/images/alexImage.jpg'
-function Home(){
+
+export default function Home(){
   return (
     <div className='mainHomeDiv'>
       <style jsx>{`
@@ -51,5 +52,3 @@ function Home(){
     </div>
   );
 }
-
-export default Home;

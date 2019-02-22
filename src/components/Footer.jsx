@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Footer(){
+export default function Footer(){
   return (
     <div className='mainFooter'>
       <style jsx>{`
@@ -28,5 +28,3 @@ function Footer(){
     </div>
   );
 }
-
-export default Footer;

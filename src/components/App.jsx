@@ -24,7 +24,7 @@ let styles = {
   }
 }; 
 
-function App(){
+export default function App(){
   componentWillMount();
   return (
     <div>
@@ -39,5 +39,3 @@ function App(){
     </div>
   );
 }
-
-export default App;

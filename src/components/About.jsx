@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function About(){
+export default function About(){
   return (
     <div className='mainAboutDiv'>
       <style jsx>{`
@@ -130,5 +130,3 @@ function About(){
     </div>
   );
 }
-
-export default About;

@@ -34,7 +34,8 @@ let mainProjects = [
     github: 'https://github.com/Zizzs/phaser-tower-defense',
   },
 ];
-function Projects(){
+
+export default function Projects(){
   return (
     <div>
         <style jsx>{`
@@ -68,5 +69,3 @@ function Projects(){
     </div>
   );
 }
-
-export default Projects;
