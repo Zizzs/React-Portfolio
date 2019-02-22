@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Languages(props){
+export default function Others(props){
     return (
         <div>
-            <style jsx>{`
-                .mainBoxes {
+           <style jsx> {`
+           .mainBoxes {
                     width: 250px;
                     background-color: #013A6B;
                     max-height: 50px;
@@ -20,23 +20,25 @@ export default function Languages(props){
                     color: white;
                     border-radius: 5px;
                 }
-                .languages {
-                    background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #B71437 50%);
+
+                .others {
+                    background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #E17410 50%);
                 }
-                .languages:hover {
-                    background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #700018 50%);
+
+                .others:hover {
+                    background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #8B4300 50%);
                 }
 
                 .mainText {
                     padding-top: 13px;
                 }
-                
-            `}</style>
-            <div className="mainBoxes languages"><p className="mainText">{props.name}</p></div>
+
+           `}</style>
+           <div className="mainBoxes others"><p className="mainText">{props.name}</p></div>
         </div>
     );
 }
 
-Languages.propTypes = {
+Others.propTypes = {
     name: PropTypes.string
 }

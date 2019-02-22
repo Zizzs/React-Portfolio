@@ -4,11 +4,10 @@ import Post from './Post';
 import { v4 } from 'uuid';
 
 export default function ProjectDetails(props){
-    console.log(props);
   let { project } = props.location.state;
-  console.log(project);
-  let _name = null;
-  let _body = null;
+//   console.log(project);
+//   let _name = null;
+//   let _body = null;
 
 //   function handleNewPostFormSubmission(event) {
 //     event.preventDefault();
