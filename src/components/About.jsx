@@ -1,7 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Languages from './Languages';
+import { v4 } from 'uuid';
 
-
-export default function About(){
+export default function About(props){
+  console.log(props.skills);
   return (
     <div className='mainAboutDiv'>
       <style jsx>{`
@@ -94,9 +97,10 @@ export default function About(){
       <div>
         <p className="titleText">Languages:</p>
         <div className="gridDiv">
-          <div className="mainBoxes languages"><p>JavaScript</p></div>
-          <div className="mainBoxes languages"><p>C#</p></div>
-          <div className="mainBoxes languages"><p>Python</p></div>
+        {props.skills.languages.map((skill) =>
+          <Languages name={skill}
+            key={v4()} />
+        )}
         </div>
       </div>
       <div>
@@ -129,4 +133,9 @@ export default function About(){
       </div>
     </div>
   );
+}
+
+
+About.propTypes = {
+  skills: PropTypes.object
 }

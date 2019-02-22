@@ -82,32 +82,6 @@ export default function ProjectDetails(props){
         </div>
       </div>
       <hr />
-      {/* <div>
-        <div>
-          <p>Comments:</p>
-        </div>
-        <div>
-          {props.location.state.project.posts.map((post) =>
-            <Post name={post.name}
-              body={post.body}
-              projectId={post.projectId}
-              key={v4()}/>
-          )}
-        </div>
-        <div>
-          <form onSubmit={handleNewPostFormSubmission}>
-            <input type="text"
-              id="name"
-              placeholder="Your Name"
-              ref={input => {_name = input;}} />
-            <input type="text"
-              id="body"
-              placeholder="Type Comment Here..."
-              ref={input => {_body = input;}} />
-            <button type="submit">Post!</button>
-          </form>
-        </div>
-      </div> */}
     </div>
   );
 }
